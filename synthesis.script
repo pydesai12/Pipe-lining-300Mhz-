@@ -1,0 +1,29 @@
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/CORE_SYNTH/libraries/syn/dw_foundation.sldb }
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+read_verilog calc.v
+current_design calc
+check_design
+set_drive 0 clk
+set_drive 0 rst
+set_dont_touch_network clk
+create_clock clk -name clk -period 2.640000
+set_propagated_clock clk
+set_clock_uncertainty 0.25 clk
+set_propagated_clock clk
+set_output_delay 0.5 -clock clk [all_outputs]
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port rst]]
+set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+set_input_delay 0.5 -clock clk $all_inputs_wo_rst_clk
+set_max_delay 1.8 -to [all_outputs]
+set_max_delay 1.8 -from $all_inputs_wo_rst_clk
+set_fix_hold [ get_clocks clk ]
+compile -map_effort high
+create_clock clk -name clk -period 3.300000
+set_propagated_clock clk
+set_clock_uncertainty 0.25 clk
+set_propagated_clock clk
+update_timing
+report -cell
+report_timing -max_paths 10
+write -hierarchy -format verilog -output calc_gates.v
+quit

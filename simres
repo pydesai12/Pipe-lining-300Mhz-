@@ -1,0 +1,40 @@
+ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+Recompiling... reason: file './calc.v' is newer than expected.
+	expected: Sun Oct  5 17:22:36 2014
+	actual:   Sun Oct  5 17:23:43 2014
+file: calc.v
+	module worklib.calc:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.calc:v <0x56ac26bb>
+			streams:   7, words: 17963
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                 14       4
+		Registers:              163     153
+		Scalar wires:            22       -
+		Vectored wires:          99       -
+		Always blocks:           17       7
+		Initial blocks:           5       5
+		Cont. assignments:       60      15
+		Pseudo assignments:       1       1
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.DW02_mult_3_stage:v
+Loading snapshot worklib.DW02_mult_3_stage:v .................... Done
+ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
+ncsim> run
+
+
+
+Completed calc simulation with honors (It worked)
+
+
+
+Simulation complete via $finish(1) at time 9877227050 PS + 0
+./tc.sv:194   $finish;
+ncsim> exit

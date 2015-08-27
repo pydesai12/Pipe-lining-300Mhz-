@@ -1,0 +1,20 @@
+Starting the run of the synthesis 200, 300 Mhz calc HW
+ cycle time 3.3
+Run on Sun Oct  5 17:23:35 PDT 2014
+desa9341 on eecad46.engr.sjsu.edu
+Running simulation cases
+vcs Simulation run on Sun Oct  5 17:23:35 PDT 2014
+VCS finished
+simv finished
+ simulation OK
+NCverilog
+NCverilog Simulation run on Sun Oct  5 17:23:57 PDT 2014
+ simulation OK
+synthesis ran
+Total gates 46001.000000
+Design synthesized OK
+
+NCverilog ran on the gates
+6104311d4099e9678559140892d3f16f  - desa9341 eecad46.engr.sjsu.edu
+<7d9fa91c939a018903efc825b1ad3f76  ->
+Completed Sun Oct  5 17:27:11 PDT 2014

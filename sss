@@ -1,0 +1,4 @@
+#!/usr/bin/csh
+source /apps/design_environment.csh
+setenv PATH "/apps/synopsys/CORE_SYNTH/bin:\${PATH}"
+dc_shell -f synthesis.script | tee synres.txt
